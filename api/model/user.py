@@ -19,3 +19,8 @@ class User:
     def set_created_date(self):
         if self.created_at == 0:
             self.created_at = datetime.datetime.now().isoformat()
+
+    def set_language(self, user_object):
+        for each_language in user_object["language"]:
+            self.language = self.language.append(each_language)
+
