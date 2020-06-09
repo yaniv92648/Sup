@@ -17,7 +17,7 @@ function NavBar(props) {
           Register
         </Link>
         <Link to="/match" className="links">
-          Sup! me
+          Match me!
         </Link>
         <Link to="/dashboard" className="links">
           Dashboard

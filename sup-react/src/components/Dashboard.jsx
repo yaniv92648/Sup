@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
-import { GoogleLogin } from "react-google-login";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 function Dashboard() {
+  useEffect(() => {
+    loadDataFromDB();
+  }, []);
+  const [userData, setUserData] = useState({});
+
+  const loadDataFromDB = () => {
+    console.log("This will be a list");
+    // axios.get("/home").then((response) => {
+    //     setUserData(response.data)
+    // });
+  };
+
   return (
     <div>
       <div>My Profile and Interests Here</div>

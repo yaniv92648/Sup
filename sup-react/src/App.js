@@ -4,9 +4,10 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import Register from "./components/Register";
 import NavBar from "./components/Navbar";
-import Login from "./components/GoogleLogin";
+// import Login from "./components/GoogleLogin";
 import MatchUp from "./components/MatchUp";
 import Dashboard from "./components/Dashboard";
+import Home from "./components/Home";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <Container>
           <NavBar></NavBar>
           <Switch>
-            {/* <Route path="/" exact component={Home}></Route> */}
+            <Route path="/home" component={Home}></Route>
             {/* <Route path="/login" exact component={GoogleLogin}></Route> */}
             <Route path="/register" exact component={Register}></Route>
             <Route path="/match" exact component={MatchUp}></Route>

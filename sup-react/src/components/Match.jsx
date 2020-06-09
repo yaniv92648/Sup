@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 
-function Register({ match }) {
+function Match({ match }) {
   //   useEffect(() => {
   //     loadUserById();
   //   }, []);
@@ -14,7 +14,7 @@ function Register({ match }) {
   //   const [user, setUser] = useState({});
 
   //   const loadUserById = () => {
-  //     axios.post(`https://suphackathon.herokuapp.com/intro`).then((response) => {
+  //     axios.get(`/getuser/${match.params.id}`).then((response) => {
   //       let data = response.data;
   //       setStudent(data);
   //     });
@@ -25,21 +25,16 @@ function Register({ match }) {
   const onSubmit = (data) => {
     console.log(data);
 
-    const putData = data;
-    console.log(qs.stringify(putData));
+    // const postData = data;
+    // console.log(qs.stringify(putData));
 
-    axios
-      .post(
-        "https://suphackathon.herokuapp.com/user/sign-up",
-        qs.stringify(putData),
-        {
-          mode: "no-cors",
-        }
-      )
-      .then((res) => {
-        console.log("I am here");
-        console.log(res);
-      });
+    // axios.post("/register", qs.stringify(putData)).then((res) => {
+    //   console.log(res);
+    // });
+  };
+  const imageOne = () => {
+    const now = new Date();
+    console.log("cat", now);
   };
 
   return (
@@ -47,13 +42,7 @@ function Register({ match }) {
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Form.Group controlId="exampleForm.ControlTextarea1">
           <Form.Label>username</Form.Label>
-          <Form.Control
-            type="text"
-            rows="3"
-            name="username"
-            ref={register}
-            placeholder="username"
-          />
+          <Form.Control name="cat" ref={register} />
         </Form.Group>
         <Form.Group controlId="exampleForm.ControlInput1">
           <Form.Label>Email address</Form.Label>
@@ -63,6 +52,16 @@ function Register({ match }) {
             name="email"
             ref={register}
           />
+          <Button>
+            <img
+              src={process.env.PUBLIC_URL + "/images/cat.jpg"}
+              alt="1"
+              width="200px"
+              name="cat"
+              type="submit"
+              onClick={(event) => imageOne(event)}
+            />
+          </Button>
         </Form.Group>
         <Form.Group controlId="exampleForm.ControlSelect1">
           <Form.Label>Age range</Form.Label>
@@ -147,4 +146,4 @@ function Register({ match }) {
     </div>
   );
 }
-export default Register;
+export default Match;
