@@ -54,23 +54,12 @@ class MysqlDataLayer:
         new_user = User(user_data)
         cursor = self.__mydb.cursor()
         try:
-            sql = """INSERT INTO user
-                    (
-                    google_user_name,
-                    google_mail,
-                    age_group,
-                    created_at,
-                    languages,
-                    interests
-                    )
-                    VALUES (%s, %s, %s, %s, %s, %s)
-                    """
+            sql = "INSERT INTO user (google_user_name, google_mail, age_group, created_at) VALUES (%s, %s, %s, %s)"
             val = (
                 new_user.google_user_name,
                 new_user.google_mail,
                 new_user.age_group,
-                new_user.created_at,
-                new_user.
+                new_user.created_at
             )
             cursor.execute(sql, val)
             self.__mydb.commit()

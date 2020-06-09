@@ -1,7 +1,6 @@
 from flask import Flask, request, json
 from db.mysql_db_layer import MysqlDataLayer
 
-
 app = Flask(__name__)
 
 data_layer = MysqlDataLayer()
@@ -11,6 +10,11 @@ data_layer = MysqlDataLayer()
 def before_first_request_func():
     global data_layer
     data_layer = MysqlDataLayer()
+
+
+@app.route('/intro')
+def welcome():
+    return "Welcome to Sup! sign-up at '/user/sign-up'"
 
 
 @app.route('/admin/add_topic', methods=['POST'])

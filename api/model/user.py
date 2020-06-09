@@ -9,8 +9,8 @@ class User:
         self.last_name = ""
         self.link_to_photo = ""
         self.age_group = user_object["age_range"]
-        self.language = []  # get list from object then DB
-        self.topics = []    # get list from object then DB
+        self.language = []
+        self.topics = []
         self.interests_free_form = ""
         self.description = ""
         self.created_at = 0
@@ -21,6 +21,15 @@ class User:
             self.created_at = datetime.datetime.now().isoformat()
 
     def set_language(self, user_object):
-        for each_language in user_object["language"]:
-            self.language = self.language.append(each_language)
+        try:
+            for lang in user_object["language"]:
+                self.language = self.language.append(lang)
+        finally:
+            pass
 
+    def set_topic(self, user_object):
+        try:
+            for top in user_object["selections"]:
+                self.language = self.language.append(top)
+        finally:
+            pass
