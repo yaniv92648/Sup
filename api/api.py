@@ -33,6 +33,16 @@ def add_new_language():
     return response
 
 
+@app.route('/user/sign-up', methods=['POST'])
+def add_new_user():
+    new_user = request.get_json()
+    user_added = data_layer.add_new_user(new_user)
+    response = app.response_class(response=json.dumps(user_added, default=str),
+                                  status=200,
+                                  mimetype="application/json")
+    return response
+
+
 @app.route('/user/')
 def get_user_profile_by_id():
     user_id = request.get_json()

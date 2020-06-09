@@ -2,6 +2,7 @@ import mysql.connector
 from decouple import config
 from model.topic import Topic
 from model.language import Language
+from model.user import User
 
 
 class MysqlDataLayer:
@@ -42,6 +43,24 @@ class MysqlDataLayer:
             val = (
                 new_language.language_name,
                 new_language.created_at,
+            )
+            cursor.execute(sql, val)
+            self.__mydb.commit()
+            return cursor.rowcount
+        finally:
+            cursor.close()
+
+    def add_new_user(self, user_data):
+        new_user = User(user_data)
+        cursor = self.__mydb.cursor()
+        try:
+            sql = "INSERT INTO user (google_user_name, google_mail, age_group, created_at)" \
+                  " VALUES (%s, %s, %s, %s)"
+            val = (
+                new_user.google_user_name,
+                new_user.google_mail,
+                new_user.age_group,
+                new_user.created_at
             )
             cursor.execute(sql, val)
             self.__mydb.commit()
