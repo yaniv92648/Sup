@@ -10,11 +10,17 @@ function NavBar(props) {
         <Link to="/home" className="links">
           Home
         </Link>
+        <Link to="/login" className="links">
+          Login
+        </Link>
         <Link to="/register" className="links">
           Register
         </Link>
-        <Link to="/login" className="links">
-          Login
+        <Link to="/match" className="links">
+          Sup! me
+        </Link>
+        <Link to="/dashboard" className="links">
+          Dashboard
         </Link>
       </ul>
     </nav>
