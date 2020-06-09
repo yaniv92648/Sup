@@ -1,6 +1,7 @@
 import mysql.connector
 from decouple import config
 from model.topic import Topic
+from model.language import Language
 
 
 class MysqlDataLayer:
@@ -24,6 +25,23 @@ class MysqlDataLayer:
             val = (
                 new_topic.topic_name,
                 new_topic.created_at,
+            )
+            cursor.execute(sql, val)
+            self.__mydb.commit()
+            return cursor.rowcount
+        finally:
+            cursor.close()
+
+    def add_new_language(self, new_language):
+        language_name = new_language['language_name']
+        new_language = Language(language_name)
+        cursor = self.__mydb.cursor()
+        try:
+            sql = "INSERT INTO sup.language (language_name, created_at)" \
+                  " VALUES (%s, %s)"
+            val = (
+                new_language.language_name,
+                new_language.created_at,
             )
             cursor.execute(sql, val)
             self.__mydb.commit()
