@@ -5,6 +5,7 @@ import qs from "qs";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { NavLink } from "react-router-dom";
 
 function Register({ match }) {
   //   useEffect(() => {
@@ -141,9 +142,16 @@ function Register({ match }) {
           />
         </Form.Group>
         <Button className="none_yet" type="submit">
-          Register
+          Sup!
         </Button>
       </Form>
+      <div className="input-group-btn">
+        <Button>
+          <NavLink to="/match" className="register-button">
+            Match me!
+          </NavLink>
+        </Button>
+      </div>
     </div>
   );
 }

@@ -24,8 +24,34 @@ nav {
   margin-top: 19px;
   margin-left: 35px;
   margin-bottom: 23px;
-  width: 38px;
+  width: 68px;
   height: 16px;
 
   color: #ffffff;
+}
+.register {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 16px;
+  padding: 20px;
+  background-color: rgb(111, 125, 140);
+  border: solid 2px white;
+  border-radius: 4px;
+}
+.register-button {
+  font-family: Roboto;
+  color: white;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 16px;
+  padding: 20px;
+  /* background-color: rgb(111, 125, 140);
+  border: solid 2px white;
+  border-radius: 4px; */
+}
+.background-pic {
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS1EZErbembh3Mq-HSsdF06bKpNP_PwM-cRXb9gF-eCW-_4WlxL&usqp=CAU);
 }

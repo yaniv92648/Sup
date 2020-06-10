@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <Router>
         <Container>
-          <NavBar></NavBar>
+          {/* <NavBar></NavBar> */}
           <Switch>
             <Route path="/home" component={Home}></Route>
             {/* <Route path="/login" exact component={GoogleLogin}></Route> */}

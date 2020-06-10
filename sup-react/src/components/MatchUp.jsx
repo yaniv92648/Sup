@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import axios from "axios";
 import qs from "qs";
+import { NavLink } from "react-router-dom";
 
 function MatchUp() {
   useEffect(() => {
@@ -14,7 +15,6 @@ function MatchUp() {
   const [pair3, setPair3] = useState({});
   const [pair4, setPair4] = useState({});
   const [pair5, setPair5] = useState({});
-  const [disabled, setDisabled] = useState(true);
 
   const timestampOnLoad = () => {
     const loadTime = new Date();
@@ -192,6 +192,13 @@ function MatchUp() {
       <Button className="none_yet" type="submit" onClick={handleSubmit}>
         Submit
       </Button>
+      <div>
+        <Button className="input-group-btn">
+          <NavLink to="/dashboard" className="register-button">
+            Matches
+          </NavLink>
+        </Button>
+      </div>
     </div>
   );
 }

@@ -6,13 +6,12 @@ function NavBar(props) {
   return (
     <nav>
       <ul className="nav-links">
-        <h1>Sup!</h1>
         <Link to="/home" className="links">
           Home
         </Link>
-        <Link to="/login" className="links">
+        {/* <Link to="/login" className="links">
           Login
-        </Link>
+        </Link> */}
         <Link to="/register" className="links">
           Register
         </Link>
