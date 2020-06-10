@@ -8,18 +8,18 @@ import { useForm } from "react-hook-form";
 import { NavLink } from "react-router-dom";
 
 function Register({ match }) {
-  //   useEffect(() => {
-  //     loadUserById();
-  //   }, []);
+  useEffect(() => {
+    loadUserById();
+  }, []);
 
-  //   const [user, setUser] = useState({});
+  // const [user, setUser] = useState({});
 
-  //   const loadUserById = () => {
-  //     axios.post(`https://suphackathon.herokuapp.com/intro`).then((response) => {
-  //       let data = response.data;
-  //       setStudent(data);
-  //     });
-  //   };
+  const loadUserById = () => {
+    axios.post(`https://suphackathon.herokuapp.com/intro`).then((response) => {
+      let data = response.data;
+      // setStudent(data);
+    });
+  };
 
   const { register, handleSubmit } = useForm();
 
@@ -141,14 +141,21 @@ function Register({ match }) {
             placeholder="Describe Yourself"
           />
         </Form.Group>
-        <Button className="none_yet" type="submit">
-          Sup!
+        <Button className="register-button round" type="submit">
+          <span className="register-button">Register</span>
         </Button>
       </Form>
       <div className="input-group-btn">
-        <Button>
+        <Button className="round">
           <NavLink to="/match" className="register-button">
             Match me!
+          </NavLink>
+        </Button>
+      </div>
+      <div className="input-group-btn">
+        <Button className="round">
+          <NavLink to="/home" className="register-button">
+            Home
           </NavLink>
         </Button>
       </div>

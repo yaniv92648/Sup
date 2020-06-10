@@ -30,30 +30,59 @@ function Dashboard() {
   };
   return (
     <div>
-      <Media>
+      <Media className="profile-box">
         <img
           width={128}
           height={128}
-          className="mr-3"
+          className="mr-3 round-pics"
           src={process.env.PUBLIC_URL + "/images/anime1.jpeg"}
           alt="Generic placeholder"
         />
         <Media.Body>
-          <h5>Media Heading</h5>
-          <p>
-            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-            scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum
-            in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
-            nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-          </p>
+          <h5>My profile</h5>
+          <p>Interests</p>
+          <p>Todays talking points</p>
         </Media.Body>
       </Media>
-      <div>My Profile and Interests Here</div>
-      <div>Lists of matches and link to Google Meet</div>
+      <Media className="match-box">
+        <img
+          width={128}
+          height={128}
+          className="mr-3 round-pics"
+          src={process.env.PUBLIC_URL + "/images/animepp.jpeg"}
+          alt="Generic placeholder"
+        />
+        <Media.Body>
+          <h5>Match profile</h5>
+          <p>Interests</p>
+          <p>We matched today to talk about ...</p>
+          <Button className="register-button" type="submit">
+            <span className="register-button">Meet here</span>
+          </Button>
+        </Media.Body>
+      </Media>
+      <Media className="match-box">
+        <img
+          width={128}
+          height={128}
+          className="mr-3 round-pics"
+          src={process.env.PUBLIC_URL + "/images/animepp.jpeg"}
+          alt="Generic placeholder"
+        />
+        <Media.Body>
+          <h5>Match profile</h5>
+          <p>Interests</p>
+          <p>We matched today to talk about ...</p>
+          <Button className="register-button" type="submit">
+            <span className="register-button">Meet here</span>
+          </Button>
+        </Media.Body>
+      </Media>
+
       <div className="input-group-btn">
         <Button>
           <NavLink to="/home" className="register-button">
-            Take me Home!
+            Home
           </NavLink>
         </Button>
       </div>

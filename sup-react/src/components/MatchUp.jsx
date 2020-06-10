@@ -181,7 +181,11 @@ function MatchUp() {
           />
         </Button>
         <span> or </span>
-        <Button disabled={Object.keys(pair5).length !== 0} onClick={imageTen}>
+        <Button
+          className="image-button"
+          disabled={Object.keys(pair5).length !== 0}
+          onClick={imageTen}
+        >
           <img
             src={process.env.PUBLIC_URL + "/images/sad-art.jpg"}
             alt="10"
@@ -189,13 +193,24 @@ function MatchUp() {
           />
         </Button>
       </div>
-      <Button className="none_yet" type="submit" onClick={handleSubmit}>
-        Submit
+      <Button
+        className="register-button round"
+        type="submit"
+        onClick={handleSubmit}
+      >
+        <span className="register-button">Submit</span>
       </Button>
       <div>
-        <Button className="input-group-btn">
+        <Button className="input-group-btn round">
           <NavLink to="/dashboard" className="register-button">
             Matches
+          </NavLink>
+        </Button>
+      </div>
+      <div className="input-group-btn round">
+        <Button>
+          <NavLink to="/home" className="register-button">
+            Home
           </NavLink>
         </Button>
       </div>

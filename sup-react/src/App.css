@@ -45,13 +45,46 @@ nav {
   color: white;
   font-style: normal;
   font-weight: normal;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 16px;
   padding: 20px;
+
   /* background-color: rgb(111, 125, 140);
   border: solid 2px white;
   border-radius: 4px; */
 }
+.round {
+  margin: 10px;
+}
+.round-pics {
+  margin: 10px;
+  border-radius: 50%;
+}
+.image-button {
+  margin: 10px;
+  background-color: white;
+}
+
 .background-pic {
   background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS1EZErbembh3Mq-HSsdF06bKpNP_PwM-cRXb9gF-eCW-_4WlxL&usqp=CAU);
+}
+.profile-box {
+  background-color: rgb(241, 177, 198);
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  margin: 10px;
+}
+.match-box {
+  background-color: lightblue;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  margin: 10px;
 }
